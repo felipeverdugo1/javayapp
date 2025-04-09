@@ -2,7 +2,10 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -72,23 +75,23 @@ public class Productos extends HttpServlet {
 			response.sendRedirect("login.html");
 		} else {
 
-			// tabla
-			int cantTotalDeGolosinas = Integer.parseInt(getInitParameter("cantTotal"));
-
 			ServletContext context = getServletContext();
 			@SuppressWarnings("unchecked")
 			HashMap<String, Double> catalogo = (HashMap<String, Double>) context.getAttribute("catalogo");
-			System.out.println(catalogo);
-
+			List<Map.Entry<String, Double>> listaProductos = new ArrayList<>(catalogo.entrySet());
+			// tabla
+			int cantTotalDeGolosinas = listaProductos.size();
 			// filas
 			out.println("<tbody>");
 			out.println("<tr>");
 			String golosina;
-			Integer cant;
+			Integer cant = 0;
 			double precioUnidad;
+
 			for (int i = 0; i < cantTotalDeGolosinas; i++) {
-				golosina = getInitParameter("golo" + i);
-				precioUnidad = Double.parseDouble(getInitParameter("pu" + i));
+				Map.Entry<String, Double> entry = listaProductos.get(i);
+				golosina = entry.getKey();
+				precioUnidad = entry.getValue();
 
 				if (sesion.getAttribute("cant" + i) == null) {
 					sesion.setAttribute("golo" + i, golosina);
