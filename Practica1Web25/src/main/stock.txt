@@ -1,0 +1,10 @@
+Chocolate,120.50
+Caramelo de menta,25.00
+Gomitas de fruta,80.75
+Galletas de chocolate,65.25
+Paleta de fresa,15.50
+Alfajor,90.00
+Chupetín,10.00
+Turrón,110.30
+Barra de cereal,45.60
+Marshmallow,55.90
