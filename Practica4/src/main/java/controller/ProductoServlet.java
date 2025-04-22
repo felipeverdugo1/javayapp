@@ -31,7 +31,7 @@ public class ProductoServlet extends HttpServlet {
         request.setAttribute("productos", productos);
         for (Iterator<Producto> iterator = productos.iterator(); iterator.hasNext();) {
 			Producto producto = (Producto) iterator.next();
-			System.out.println(producto);
+			System.out.println(producto.getNombre());
 			
 		}
     }

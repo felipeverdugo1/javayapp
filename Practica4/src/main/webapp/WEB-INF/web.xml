@@ -1,6 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0"
+         metadata-complete="true">
+    <!-- Your configuration here -->
 	<display-name>Practica4</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>GenerarFormulario</display-name>
+		<servlet-name>GenerarFormulario</servlet-name>
+		<servlet-class>controller.GenerarFormulario</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GenerarFormulario</servlet-name>
+		<url-pattern>/GenerarFormulario</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<description>
+		</description>
+		<display-name>GenerarPresupuesto</display-name>
+		<servlet-name>GenerarPresupuesto</servlet-name>
+		<servlet-class>controller.GenerarPresupuesto</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GenerarPresupuesto</servlet-name>
+		<url-pattern>/GenerarPresupuesto</url-pattern>
+	</servlet-mapping>
+	
+	
+			<servlet>
+		<description>
+		</description>
+		<display-name>Salir</display-name>
+		<servlet-name>Salir</servlet-name>
+		<servlet-class>controller.Salir</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Salir</servlet-name>
+		<url-pattern>/Salir</url-pattern>
+	</servlet-mapping>
+	
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>

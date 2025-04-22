@@ -7,6 +7,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>model.Producto</class>
+        <class>model.Persona</class>
+        <class>model.Item</class>
 
         <properties>
             <!-- Configuración de conexión -->
